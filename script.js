@@ -31,6 +31,7 @@ function loadNewCards() {
     } else {
       card.innerHTML = "Write here!!!";
       card.style.fontFamily = "sans-serif";
+      card.style.cursor = "pointer";
       card.addEventListener("click", () => {
         name = prompt("Prompt In: ");
         cards = document.querySelectorAll(".card");
@@ -70,8 +71,10 @@ lastCardObserver.observe(document.querySelector(".card:last-child"));
 cards.forEach((entry) => {
   if (name) {
     entry.innerHTML = name;
+    entry.style.cursor = "default";
     entry.style.backgroundColor = randomColor();
   } else {
+    entry.style.cursor = "pointer";
     entry.addEventListener("click", () => {
       name = prompt("Prompt In: ");
       cards = document.querySelectorAll(".card");
