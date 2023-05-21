@@ -72,7 +72,7 @@ cards.forEach((entry) => {
     entry.innerHTML = name;
     entry.style.backgroundColor = randomColor();
   } else {
-    card.addEventListener("click", () => {
+    entry.addEventListener("click", () => {
       name = prompt("Prompt In: ");
       cards = document.querySelectorAll(".card");
       cards.forEach((entry) => {
