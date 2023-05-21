@@ -72,6 +72,15 @@ cards.forEach((entry) => {
     entry.innerHTML = name;
     entry.style.backgroundColor = randomColor();
   } else {
+    card.addEventListener("click", () => {
+      name = prompt("Prompt In: ");
+      cards = document.querySelectorAll(".card");
+      cards.forEach((entry) => {
+        entry.innerHTML = name;
+        entry.style.backgroundColor = randomColor();
+        observer.observe(entry);
+      });
+    });
     entry.innerHTML = "Write here!!!";
     entry.style.fontFamily = "sans-serif";
     entry.style.backgroundColor = "#fff";
